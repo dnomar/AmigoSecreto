@@ -6,10 +6,13 @@ open Suave.Operators
 open Suave.Successful
 open AmigoSecreto.Sorteing
 
+
 [<EntryPoint>]
 let main argv = 
   let cts = new CancellationTokenSource()
-  let conf = { defaultConfig with cancellationToken = cts.Token }
+       
+
+  let conf = { defaultConfig with cancellationToken = cts.Token}
 
   let app = choose [ 
       GET >=> choose [ path "/" >=> OK testApi
